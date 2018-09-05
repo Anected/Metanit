@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Список пользователей</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+<p>Before canvas.</p>
+<canvas width="500" height="600"></canvas>
+<p>After canvas.</p>
+<script>
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+    let x = 5;
+    let y = 5;
+    const move = () => {
+
+    }
+
+    const draw = () => {
+        context.fillStyle = "red";
+        context.fillRect(0, 0, 500, 600);
+        context.fillStyle = "green";
+        context.fillRect(x * 10, y * 10, 10, 20);
+    }
+
+
+    addEventListener("keydown", function (event) {b
+        console.log(event.keyCode);
+        if (event.keyCode === 40 && y < 25) {
+            y++
+        }
+        if (event.keyCode === 38) {
+            y--
+        }
+
+        if (event.keyCode === 39) {
+            x++
+        }
+        if (event.keyCode === 37) {
+            x--
+        }
+        draw()
+    });
+    // addEventListener("keyup", function(event) {
+    //     if (event.keyCode === 86)
+    //         document.body.style.background = "";
+    // });
+    draw()
+
+</script>
+
+</body>
+</html>
